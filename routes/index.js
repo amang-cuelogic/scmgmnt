@@ -13,19 +13,22 @@ exports.login = function(req, res){
 	}
 
 
-	userData.find({'username' : username}, function(err, user){
+	userData.findOne({'username' : username}, function(err, user){
 	    if (err) {
 	        console.log(err);
 	        return res.send(401,'Enter the correct username and password');
 	    }else{
 	    	//console.log(user)
-	    	//console.log(user[0].username)
-	    	//console.log(username +' ' +user[0].username +password +' ' +user[0].password);
-	    	if (username === user[0].username && password === user[0].password) {
-	    		return res.send(user[0]);
+	    	//console.log(user[0].username)	    	
+	    	if (user==null){
+		    	return res.send({error : 'error'});
 			}else{
-				return res.send(401,'Enter the correct username and password');
-			} 
+				if (username === user.username && password === user.password) {
+					return res.send(user);
+				}else{
+					return res.send({error : 'error'});
+				} 
+			}
 	    }
 	    //var randomCookie = GenerateCookie();
 	    //res.send(randomCookie);

@@ -1,3 +1,22 @@
-﻿<h1>Home</h1>
-<p>You're logged in!!</p>
-<p><a href="#/login">Logout</a></a></p>
+﻿
+<div class="container">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->  
+        <div style="float:right;clear:both;">
+        	<h1>Welcome {{loginUser}}</h1>
+        	<a href="#/login">Logout</a>
+        </div>
+    </div><!-- /.container -->  
+<div ng-show="message" class="alert alert-info">{{message}}</div>
+<p>Welcome to new School Management System</p>

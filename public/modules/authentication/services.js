@@ -27,8 +27,13 @@ angular.module('Authentication')
             //        callback(response);
             //    });
             $http.post('/login', { username: username, password: password }).success(function (response) {
-                console.log(response);
-                callback(response);
+                var reqResponse = response;
+                if (reqResponse.error=='error') {
+                   reqResponse.message = 'Username or password is incorrect';
+                }else{
+                   reqResponse.message = 'success'; 
+                }
+                callback(reqResponse);
             });
         };
 
@@ -50,6 +55,11 @@ angular.module('Authentication')
             $rootScope.globals = {};
             $cookieStore.remove('globals');
             $http.defaults.headers.common.Authorization = 'Basic ';
+        };
+
+        service.GetDetails = function () {
+            var globalsUsers = $cookieStore.get('globals');
+            return globalsUsers;
         };
 
         return service;
