@@ -1,8 +1,15 @@
+.login-form{width: 50%; margin: 0 auto;}
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+font-size: 15px;
+line-height: 1.42857143;
+color: #eee;
+background-color: #eee;
 }
-
-a {
-  color: #00B7FF;
+.form-group label {
+color: #000000;
 }
+.heading h2{ color: #000;}
+.navbar-nav{float: right;
+font-size: 20px;
+text-transform: capitalize;}

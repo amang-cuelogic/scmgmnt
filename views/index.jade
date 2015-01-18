@@ -4,6 +4,7 @@ html(lang='en', ng-app='BasicHttpAuthExample')
 		meta(content='application/javascript' http-equiv='content-type')
 		title= title
 		link(rel='stylesheet' href='css/bootstrap.min.css')
+		link(rel='stylesheet' href='css/style.css')
 		script(src='lib/angular.min.js')
 		script(src='lib/angular-route.js')
 		script(src='lib/angular-cookies.js')
@@ -14,4 +15,4 @@ html(lang='en', ng-app='BasicHttpAuthExample')
 		body
 			div.jumbotron
 				div.container
-					div(ng-view)
+					div.login-form(ng-view)
