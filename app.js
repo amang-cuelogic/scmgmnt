@@ -10,6 +10,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes');
 var users = require('./routes/user');
+var sclass = require('./routes/sclass');
 //var users = require('./models/Posts');
 var app = express();
 
@@ -27,6 +28,7 @@ app.use(app.router);
 
 app.get('/', routes.index);
 app.get('/login', routes.login);
+app.get('/sclass', sclass.assignclass);
 app.post('/login', routes.login);
 
 app.get('/users', users.list);

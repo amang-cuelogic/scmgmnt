@@ -1,0 +1,18 @@
+doctype html
+html(lang='en', ng-app='Sclass')
+	head
+		meta(content='application/javascript' http-equiv='content-type')
+		title= title
+		link(rel='stylesheet' href='css/bootstrap.min.css')
+		link(rel='stylesheet' href='css/style.css')
+		script(src='lib/angular.min.js')
+		script(src='lib/angular-route.js')
+		script(src='lib/angular-cookies.js')
+		script(src='scripts/app.js')
+		script(src='modules/authentication/services.js')
+		script(src='modules/authentication/controllers.js')
+		script(src='modules/sclass/controllers.js')
+		body
+			div.jumbotron
+				div.container
+					div.login-form(ng-view)

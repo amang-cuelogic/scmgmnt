@@ -12,7 +12,6 @@ exports.login = function(req, res){
 	    return res.send(401,'Enter the correct username and password');
 	}
 
-
 	userData.findOne({'username' : username}, function(err, user){
 	    if (err) {
 	        console.log(err);

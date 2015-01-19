@@ -59,6 +59,7 @@ angular.module('Authentication')
 
         service.GetDetails = function () {
             var globalsUsers = $cookieStore.get('globals');
+            //var currUser = globalsUsers.currentUser;
             return globalsUsers;
         };
 
