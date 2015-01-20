@@ -5,7 +5,7 @@ angular.module('Authentication')
 .controller('LoginController',
 ['$scope', '$rootScope', '$location', 'AuthenticationService',
 function ($scope, $rootScope, $location, AuthenticationService) {
-    var GetDetails = AuthenticationService.GetDetails();
+    var GetDetails = AuthenticationService.GetDetails();//console.log(GetDetails);
     if(GetDetails== undefined){
         $scope.error = 'Please Login';
         // reset login status
@@ -13,8 +13,10 @@ function ($scope, $rootScope, $location, AuthenticationService) {
         $scope.login = function () {
             $scope.dataLoading = true;
             AuthenticationService.Login($scope.username, $scope.password, function (response) {
+
                 if (response.message == 'success') {
                     AuthenticationService.SetCredentials($scope.username, $scope.password);
+                    var GetDetails = AuthenticationService.GetDetails();
                     //console.log(GetDetails.currentUser.username)
                     if(GetDetails.currentUser.username!=null){
                         $location.path('/');
@@ -30,24 +32,12 @@ function ($scope, $rootScope, $location, AuthenticationService) {
             });
         };
     }else{
-        $scope.login = function () {
-            $scope.dataLoading = true;
-            AuthenticationService.Login($scope.username, $scope.password, function (response) {
-                if (response.message == 'success') {
-                    AuthenticationService.SetCredentials($scope.username, $scope.password);
-                    var GetDetails = AuthenticationService.GetDetails();
-                    if(GetDetails.currentUser.username!=null){
-                        $location.path('/');
-                    }else{
-                        $location.path('/login');
-                        $scope.error = 'Session Expired';
-                    }                   
-                } else {
-                    $scope.error = response.message;
-                    $scope.dataLoading = false;
-                }
-            });
-        };      
+        var GetDetails = AuthenticationService.GetDetails();
+        if(GetDetails!= undefined || GetDetails!=''){
+            $location.path('/');
+        }else{
+            $location.path('/login');
+        }
     }
 }])
 

@@ -5,7 +5,7 @@ angular.module('Authentication', []);
 angular.module('Home', []);
 angular.module('Sclass', []);
 
-angular.module('BasicHttpAuthExample', [
+angular.module('SmsLoginApp', [
     'Authentication',
     'Home',
     'Sclass',
