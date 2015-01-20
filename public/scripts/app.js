@@ -3,12 +3,12 @@
 // declare modules
 angular.module('Authentication', []);
 angular.module('Home', []);
-angular.module('Sclass', []);
+angular.module('sclass', []);
 
 angular.module('SmsLoginApp', [
     'Authentication',
     'Home',
-    'Sclass',
+    'sclass',
     'ngRoute',
     'ngCookies'
 ])
@@ -34,7 +34,7 @@ angular.module('SmsLoginApp', [
     })
 
     .when('/sclass', {
-        controller: 'SclassController',
+        controller: 'sclassController',
         templateUrl: 'modules/sclass/views/sclass.html'
     })
 

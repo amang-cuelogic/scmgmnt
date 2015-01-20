@@ -2,7 +2,7 @@
 var userData = require("../schema/users").user;
 
 exports.index = function(req, res){
-  res.render('index', { title: 'School Management' });
+  res.render('index', { title: 'School Management - Home' });
 };
 exports.login = function(req, res){
   //res.render('layout', { title: 'School Management Login' });

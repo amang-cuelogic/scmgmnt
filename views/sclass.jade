@@ -1,5 +1,5 @@
 doctype html
-html(lang='en', ng-app='Sclass')
+html(lang='en', ng-app='SmsLoginApp')
 	head
 		meta(content='application/javascript' http-equiv='content-type')
 		title= title
@@ -9,10 +9,9 @@ html(lang='en', ng-app='Sclass')
 		script(src='lib/angular-route.js')
 		script(src='lib/angular-cookies.js')
 		script(src='scripts/app.js')
-		script(src='modules/authentication/services.js')
-		script(src='modules/authentication/controllers.js')
-		script(src='modules/sclass/controllers.js')
+		
+		
 		body
 			div.jumbotron
 				div.container
-					div.login-form(ng-view)
+					div.teacher-form(ng-view)
