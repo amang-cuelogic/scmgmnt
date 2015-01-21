@@ -38,6 +38,11 @@ angular.module('SmsLoginApp', [
         templateUrl: 'modules/sclass/views/sclass.html'
     })
 
+    .when('/viewclass', {
+        controller: 'sclassController',
+        templateUrl: 'modules/sclass/views/viewclass.html'
+    })
+
     .otherwise({ redirectTo: '/login' });
 }])
 

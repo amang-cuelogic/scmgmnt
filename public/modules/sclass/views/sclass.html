@@ -35,7 +35,7 @@
       <label class="control-label" for="exampleInputEmail1">Select Teacher</label>
       <select name="teacher_id" ng-model="teacher_id" onload="getTeacher()">
         <option value="">Please Select the Teacher</option>
-        <option value="{{teacher.id}}" ng-repeat="teacher in teachers">{{teacher.name}}</option>
+        <option value="{{teacher._id}}" ng-repeat="teacher in teachers">{{teacher.teacher_id}}</option>
       </select>
     </div>
     <div class="form-group">

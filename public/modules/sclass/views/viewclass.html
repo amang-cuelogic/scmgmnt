@@ -1,0 +1,32 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#" style="font-size: 48px;">SMS</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#">home</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#/sclass">Assign Teacher</a>
+                </li>
+                <li>
+                    <a>Welcome {{loginUser}}</a>
+                </li>
+                <li>
+                    <a href="#/logout">Logout</a>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->           
+    </div><!-- /.container -->
+</nav>
+<div ng-show="message" class="alert alert-info">{{message}}</div>
+<ul>
+    <li ng-repeat="teach in listteacher"><div class="teacher_name">{{teach.teacher_id}}</div><div class="class_name">{{teach.class_id}}</div></li>
+</ul>

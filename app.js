@@ -29,6 +29,7 @@ app.use(app.router);
 app.get('/', routes.index);
 app.get('/login', routes.login);
 app.post('/sclass', sclass.assignclass);
+app.post('/viewclass', sclass.viewclasses);
 app.get('/getteachers', sclass.getteachers);
 app.get('/getclasses', sclass.getclasses);
 app.post('/login', routes.login);
