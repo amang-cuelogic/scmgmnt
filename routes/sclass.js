@@ -16,22 +16,22 @@ exports.assignclass = function(req, res){
 };
 
 exports.viewclasses = function(req, res){
-    var currUsername = JSON.parse(req.cookies.globals).currentUser.username;
+    var currUsername = JSON.parse(req.cookies.globals).currentUser.username;console.log(data)
     var currUsertype = JSON.parse(req.cookies.globals).currentUser.usertype;
-    if(currUsertype=='superadmin'){
-        teacherData.find({teacher_id : data._id},function(err,resdata){
+    if(currUsertype==1){
+        teacherData.find({teacher_id : data._id},function(err,resdata){console.log(data)
             if(err){
                 console.log(err);
             }else{
                 res.send(resdata);
             }
         });
-    }else if(currUsertype=='admin'){
+    }else if(currUsertype==2){
         userData.findOne({username : currUsername},function(err,data){
             if(err){
                 console.log(err);
             }else{
-                if(data.usertype!='teacher'){
+                if(data.usertype!=3){
                     res.send('No Data Found');
                 }else{
                     teacherData.find({admin_id : data._id},function(err,resdata){
@@ -66,7 +66,7 @@ exports.viewclasses = function(req, res){
 };
 
 exports.getteachers = function(req, res){
-    userData.find({usertype : 'teacher'},function(err,data){
+    userData.find({usertype:3},function(err,data){
         if(err){
             console.log(err);
         }else{

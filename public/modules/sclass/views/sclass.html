@@ -33,20 +33,20 @@
   <form name="form" ng-submit="assignTeacher()" role="form">
     <div class="form-group">
       <label class="control-label" for="exampleInputEmail1">Select Teacher</label>
-      <select name="teacher_id" ng-model="teacher_id" onload="getTeacher()">
+      <select name="teacher_id" ng-model="teacher_id" class="selecitem" >
         <option value="">Please Select the Teacher</option>
-        <option value="{{teacher._id}}" ng-repeat="teacher in teachers">{{teacher.teacher_id}}</option>
+        <option value="{{teacher._id}}" ng-repeat="teacher in teachers">{{teacher.name}}</option>
       </select>
     </div>
     <div class="form-group">
       <label class="control-label" for="exampleInputEmail1">Select Class</label>
-      <select name="class_id" ng-model="class_id" onload="getClass()">
+      <select name="class_id" ng-model="class_id" onload="getClass()" class="selecitem">
         <option value="">Please Select the Class</option>
-        <option ng-repeat="class in classes" value="{{class.id}}">{{class.name}}</option>
+        <option ng-repeat="class in classes" value="{{class._id}}">{{class.class_name}}</option>
       </select>
     </div>
     <div class="form-actions">
-        <button type="submit" class="btn btn-danger" ng-disabled="form.$invalid">Create User</button>
+        <button type="submit" class="btn btn-danger" ng-disabled="form.$invalid">Assign Class</button>
     </div>
   </form>
 </div>
