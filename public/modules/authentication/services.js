@@ -148,6 +148,4 @@ angular.module('Authentication')
             return output;
         }
     };
-
-    /* jshint ignore:end */
 });

@@ -26,7 +26,9 @@
         </div><!-- /.navbar-collapse -->           
     </div><!-- /.container -->
 </nav>
+
 <div ng-show="message" class="alert alert-info">{{message}}</div>
+<a href="#/sclass">Assign Teacher</a>
 <ul>
-    <li ng-repeat="teach in listteacher"><div class="teacher_name">{{teach.teacher_id}}</div><div class="class_name">{{teach.class_id}}</div></li>
+    <li ng-repeat="teach in listteacher"><div class="teacher_name">{{teach.user_info}}</div><div class="class_name">{{teach.class_id}}</div></li>
 </ul>

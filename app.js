@@ -11,7 +11,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes');
 var users = require('./routes/user');
 var sclass = require('./routes/sclass.js');
-//var users = require('./models/Posts');
+
 var app = express();
 
 // view engine setup
@@ -30,9 +30,13 @@ app.get('/', routes.index);
 app.get('/login', routes.login);
 app.post('/sclass', sclass.assignclass);
 app.post('/viewclass', sclass.viewclasses);
+app.post('/addclass', sclass.addclass);
+app.post('/addbook', sclass.addbook);
 app.get('/getteachers', sclass.getteachers);
 app.get('/getclasses', sclass.getclasses);
 app.post('/login', routes.login);
+app.post('/listclass', sclass.listclass);
+app.post('/listbooks', sclass.listbooks);
 
 app.get('/users', users.list);
 

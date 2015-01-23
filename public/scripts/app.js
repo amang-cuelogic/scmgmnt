@@ -42,6 +42,22 @@ angular.module('SmsLoginApp', [
         controller: 'sclassController',
         templateUrl: 'modules/sclass/views/viewclass.html'
     })
+    .when('/addclass', {
+        controller: 'sclassController',
+        templateUrl: 'modules/sclass/views/addclass.html'
+    })
+    .when('/addbook', {
+        controller: 'sclassController',
+        templateUrl: 'modules/sclass/views/addbook.html'
+    })
+    .when('/listclass', {
+        controller: 'sclassController',
+        templateUrl: 'modules/sclass/views/listclass.html'
+    })
+    .when('/listbooks', {
+        controller: 'sclassController',
+        templateUrl: 'modules/sclass/views/listbooks.html'
+    })
 
     .otherwise({ redirectTo: '/login' });
 }])

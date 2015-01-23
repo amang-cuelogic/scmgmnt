@@ -1,4 +1,4 @@
-﻿<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -11,19 +11,10 @@
                     <a href="#">home</a>
                 </li>
                 <li>
-                    <a href="#">Assign admin</a>
+                    <a href="#">About</a>
                 </li>
                 <li>
-                    <a href="#/addclass">Add Class</a>
-                </li>
-                <li>
-                    <a href="#">Add Book</a>
-                </li>
-                <li>
-                    <a href="#/viewclass">Assign Teacher</a>
-                </li>
-                <li>
-                    <a href="#/sclass">Assign Book</a>
+                    <a href="#/sclass">Assign Teacher</a>
                 </li>
                 <li>
                     <a>Welcome {{loginUser}}</a>
@@ -35,6 +26,8 @@
         </div><!-- /.navbar-collapse -->           
     </div><!-- /.container -->
 </nav>
-
 <div ng-show="message" class="alert alert-info">{{message}}</div>
-<p>Welcome to new School Management System</p>
+<a href="#/addbook">Add Book</a>
+<ul>
+    <li ng-repeat="book in listbookdata"><div class="book_name">{{book._id}}</div><div class="book_name">{{book.book_name}}</div></li>
+</ul>

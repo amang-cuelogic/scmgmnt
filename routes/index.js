@@ -29,10 +29,7 @@ exports.login = function(req, res){
 				} 
 			}
 	    }
-	    //var randomCookie = GenerateCookie();
-	    //res.send(randomCookie);
 	});
- 
 };
 
 function GenerateCookie() {
